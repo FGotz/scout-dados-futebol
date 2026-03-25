@@ -22,4 +22,4 @@ The system is built around the `ScoutCorinthians` class (easily adaptable to any
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/YourUsername/scout-dados-futebol.git](https://github.com/YourUsername/scout-dados-futebol.git)
+   git clone [https://github.com/FGotz/scout-dados-futebol.git](https://github.com/FGotz/scout-dados-futebol.git)
