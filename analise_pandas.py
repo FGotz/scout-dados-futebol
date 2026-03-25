@@ -2,7 +2,7 @@ import requests
 import pandas as pd # Importando o nosso "Excel"
 
 url = "https://v3.football.api-sports.io/players"
-minha_chave = "0409c56e2fc46d34f1bb200a330ae80c" # Sua chave oficial
+minha_chave = "FOOTBALL_API_KEY" # Sua chave oficial
 
 querystring = {"team":"131","season":"2023"}
 headers = {"x-apisports-key": minha_chave}

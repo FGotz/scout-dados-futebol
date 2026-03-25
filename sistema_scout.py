@@ -1,6 +1,8 @@
+import os
 import requests
 import pandas as pd
 from google import genai
+from dotenv import load_dotenv
 
 class ScoutCorinthians:
     # 1. O Método Construtor (A recepção da nossa fábrica)
@@ -71,14 +73,24 @@ class ScoutCorinthians:
 # EXECUTANDO O SISTEMA (A Mágica Acontece Aqui)
 # ==========================================
 if __name__ == "__main__":
-    # Cole suas chaves aqui
-    CHAVE_FOOTBALL = "0409c56e2fc46d34f1bb200a330ae80c" 
-    CHAVE_GEMINI = "AIzaSyDBdbxvLAz-9-17wYlv5qbKN0_B0VLii5c"
+    # COLOQUE O LOAD_DOTENV AQUI DENTRO
+    load_dotenv(override=True)
     
-    # 1. Ligamos a fábrica
+    CHAVE_FOOTBALL = os.getenv("FOOTBALL_API_KEY") 
+    CHAVE_GEMINI = os.getenv("GEMINI_API_KEY")
+    
+    if not CHAVE_FOOTBALL or not CHAVE_GEMINI:
+        print("❌ Erro de leitura no .env!")
+        # Plano B: Se o .env falhar de novo, vamos colocar a chave direto aqui
+        # apenas para você conseguir rodar o scout agora:
+        CHAVE_FOOTBALL = "0409c56e2fc46d34f1bb200a330ae80c"
+        CHAVE_GEMINI = "AIzaSyCsPap_6c4E_va2JZmQB_itojtfR_utjFo"
+        print("⚠️ Usando chaves de contingência (Hardcoded).")
+
+    # Ligamos a fábrica
     meu_sistema = ScoutCorinthians(CHAVE_FOOTBALL, CHAVE_GEMINI)
     
-    # 2. Pedimos para os operários trabalharem em sequência
+    # Iniciamos o trabalho
     dados_brutos = meu_sistema.buscar_dados_api()
     
     if dados_brutos:

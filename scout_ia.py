@@ -2,7 +2,7 @@ import pandas as pd
 from google import genai # <-- Importando a biblioteca nova!
 
 # 1. Configurando a IA com a nova sintaxe
-minha_chave_ia = "AIzaSyDBdbxvLAz-9-17wYlv5qbKN0_B0VLii5c" # Cole sua chave que começa com AIzaSy...
+minha_chave_ia = "GEMINI_API_KEY" # Cole sua chave que começa com AIzaSy...
 cliente = genai.Client(api_key=minha_chave_ia)
 
 # 2. Lendo os dados que salvamos na Semana 2

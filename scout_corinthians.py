@@ -1,7 +1,7 @@
 import requests
 
 url = "https://v3.football.api-sports.io/players"
-minha_chave = "0409c56e2fc46d34f1bb200a330ae80c" # Sua chave oficial
+minha_chave = "FOOTBALL_API_KEY" # Sua chave oficial
 
 # Buscando o elenco do Corinthians (131) de 2023
 querystring = {"team":"131","season":"2023"}
